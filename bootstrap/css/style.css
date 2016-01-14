@@ -1,0 +1,10 @@
+.form-vertical
+{
+max-width:400px;
+margin:0 auto;
+}
+.form-control
+{
+height:40px;
+border-radius:0;
+}
