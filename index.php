@@ -24,6 +24,7 @@
 			<tr>
 			<td><label>First Name</label></td>
 			<td><label>Last Name</label></td>
+			<td><label>Actions</label></td>
 			</tr>
 			<?php
 				include('db_connect.php');
@@ -31,12 +32,19 @@
 
 				mysqli_close();
 				foreach ($entries as $entry) {
+					$id = $entry['user_id'];
 					echo "<tr>";
 					echo "<td>";
 					echo $entry['fname'];
 					echo "</td>";
 					echo "<td>";
 					echo $entry['lname'];
+					echo "</td>";
+					echo "<td>";
+					?>
+					<a href="http://localhost/crud/edit.php?id=<?php echo $id; ?>">Edit</a>
+					<a href="http://localhost/crud/delete.php?id=<?php echo $id; ?>">Delete</a>
+					<?php
 					echo "</td>";
 					echo "</tr>";
 				}
